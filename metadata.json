@@ -1,0 +1,6 @@
+{
+  "name": "孕助醫＋：共同探索醫助共照與孕產知識",
+  "description": "運用多媒體微學習提升產婦「對助產照護之信任」與「孕產自主決策自我效能」介入計畫之純資訊衛教網站，提供微學習觀看、單手答題同理回應，與資訊懶人包下載功能。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

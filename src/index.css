@@ -1,0 +1,188 @@
+@import "@fontsource/chiron-goround-tc/300.css";
+@import "@fontsource/chiron-goround-tc/400.css";
+@import "@fontsource/chiron-goround-tc/500.css";
+@import "@fontsource/chiron-goround-tc/700.css";
+@import "@fontsource/chiron-goround-tc/800.css";
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Chiron GoRound TC", "M PLUS Rounded 1c", sans-serif;
+  --font-serif: "Chiron GoRound TC", serif;
+  --font-mono: "Chiron GoRound TC", monospace;
+}
+
+/* Force all text elements, buttons, inputs and custom classes to render in Chiron GoRound TC */
+html, body, #root, button, input, select, textarea {
+  font-family: "Chiron GoRound TC", "M PLUS Rounded 1c", "PingFang TC", "STHeitiTC-Light", "Microsoft JhengHei", sans-serif !important;
+}
+
+/* Custom Keyframe Animations for Smooth Drawer Slide, Scale Popups & Backdrops */
+@keyframes slideRight {
+  from {
+    transform: translateX(-15%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes pulseBorder {
+  0% {
+    border-color: rgba(251, 196, 171, 0.4);
+  }
+  50% {
+    border-color: rgba(201, 109, 66, 0.7);
+  }
+  100% {
+    border-color: rgba(251, 196, 171, 0.4);
+  }
+}
+
+@keyframes bubbleBreath {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    border-color: rgba(243, 244, 246, 1);
+    background-color: rgba(255, 255, 255, 1);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 4px 14px rgba(201, 109, 66, 0.12), 0 0 8px rgba(251, 196, 171, 0.3);
+    border-color: rgba(251, 196, 171, 0.85);
+    background-color: rgba(254, 243, 199, 0.15);
+  }
+}
+
+.animate-bubble-breath {
+  animation: bubbleBreath 3.2s ease-in-out infinite;
+}
+
+@keyframes floatArrowUp {
+  0% {
+    transform: translateY(30px) scale(0.9);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.75;
+    transform: translateY(10px) scale(1);
+  }
+  70% {
+    opacity: 0.75;
+    transform: translateY(-10px) scale(1);
+  }
+  100% {
+    transform: translateY(-30px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+.animate-swipe-up-guide {
+  animation: floatArrowUp 2s infinite ease-in-out;
+}
+
+.animate-slide-right {
+  animation: slideRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-overlay {
+  animation: fadeInOverlay 0.2s ease-out forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Custom smooth transitions for tab switching section wrappers */
+.section-transition-active {
+  animation: scaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom menu buttons flashing/pulsing animations (similar to birth plan bubbles) */
+@keyframes menuActivePulse {
+  0%, 100% {
+    transform: scale(1.02);
+    box-shadow: 0 2px 4px rgba(201, 109, 66, 0.15), inset 0 1px 2px rgba(0,0,0,0.05);
+    border-color: rgba(251, 196, 171, 0.85);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 8px 18px rgba(201, 109, 66, 0.3), 0 0 12px rgba(251, 196, 171, 0.55), inset 0 1px 2px rgba(0,0,0,0.05);
+    border-color: rgba(201, 109, 66, 0.95);
+  }
+}
+
+@keyframes menuInactivePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    border-color: transparent;
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 6px 16px rgba(201, 109, 66, 0.12), 0 0 10px rgba(251, 196, 171, 0.35);
+    border-color: rgba(251, 196, 171, 0.85);
+    background-color: rgba(254, 243, 199, 0.25);
+  }
+}
+
+.animate-menu-active-pulse {
+  animation: menuActivePulse 3.2s ease-in-out infinite;
+}
+
+.animate-menu-inactive-pulse {
+  animation: menuInactivePulse 3.2s ease-in-out infinite;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+/* Custom post survey FAB breathing animation */
+@keyframes postSurveyPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 14px rgba(201, 109, 66, 0.25), 0 0 0 0 rgba(201, 109, 66, 0.4);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 10px 25px rgba(201, 109, 66, 0.45), 0 0 0 12px rgba(201, 109, 66, 0);
+  }
+}
+
+.animate-post-survey-pulse {
+  animation: postSurveyPulse 2.4s ease-in-out infinite;
+}
+

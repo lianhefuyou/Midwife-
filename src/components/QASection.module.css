@@ -1,0 +1,245 @@
+.qaWrapper {
+  background: var(--color-bg-pure);
+  border: 4px solid #ffffff;
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  box-shadow: 0 10px 30px -8px rgba(179, 138, 87, 0.16);
+  margin-bottom: 0px;
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.questionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-bottom: 1px dashed rgba(251, 196, 171, 0.4);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.categoryTag {
+  background-color: var(--color-primary-light);
+  color: #c96d42;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+}
+
+.progressLabel {
+  font-size: 0.8rem;
+  color: var(--color-gray);
+  font-weight: 600;
+}
+
+.questionBody {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Big rounded full-width options - easy for one-handed mobile fingers */
+.optionBtn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 0.85rem;
+  background-color: var(--color-bg-soft);
+  border: 2px solid rgba(251, 196, 171, 0.25);
+  border-radius: 1.25rem;
+  text-align: left;
+  color: var(--color-dark);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.4;
+  outline: none;
+}
+
+.optionBtn:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary);
+  transform: translateY(-1.5px) scale(1.01);
+  box-shadow: 0 4px 12px rgba(251, 196, 171, 0.15);
+}
+
+.optionBtn:active {
+  transform: scale(0.99);
+}
+
+.optionLetter {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1.5px solid var(--color-primary);
+  color: #c96d42;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.optionBtn:hover .optionLetter {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+/* Modal Overlay: absolute backdrop relative to card only */
+.modalOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(74, 62, 61, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeInBackdrop 0.25s ease-out;
+  border-radius: 1.5rem;
+}
+
+@keyframes fadeInBackdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Custom Natural Tones pop-up warm-orange card body, text centered */
+.modalCard {
+  background-color: #fffaf0;
+  border-top: 8px solid var(--color-primary);
+  border-left: 2px solid rgba(251, 196, 171, 0.3);
+  border-right: 2px solid rgba(251, 196, 171, 0.3);
+  border-bottom: 2px solid rgba(251, 196, 171, 0.3);
+  border-radius: 2rem; /* 32px rounded style as in Design HTML */
+  width: 100%;
+  max-width: 580px; /* Made larger */
+  padding: 2rem 1.75rem; /* slightly tighter padding to fit absolute container nicely */
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(179, 138, 87, 0.3);
+  position: relative;
+  overflow-y: auto;
+  max-height: 95%; /* fit within the qaWrapper absolutely */
+  animation: scaleUpCard 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes scaleUpCard {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modalIconContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.modalIcon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalTitle {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #b38a57;
+  margin-bottom: 1rem;
+}
+
+.modalMessage {
+  font-size: 1.05rem;
+  color: var(--color-dark);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+.dismissBtn {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  padding: 0.85rem 2rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(179, 138, 87, 0.3);
+}
+
+.dismissBtn:hover {
+  background-color: #9c7344;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(179, 138, 87, 0.4);
+}
+
+.dismissBtn:active {
+  transform: translateY(0);
+}
+
+/* Custom design banner to coordinate question customization */
+.helperBanner {
+  background-color: #FFF9F6;
+  border: 1px dashed var(--color-primary);
+  padding: 0.85rem;
+  border-radius: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--color-gray);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+/* Custom always-visible scrollbar for empathetic feedback content */
+.scrollbarCustom {
+  scrollbar-width: thin !important;
+  scrollbar-color: #FBC4AB rgba(251, 196, 171, 0.2) !important;
+}
+
+.scrollbarCustom::-webkit-scrollbar {
+  width: 6px !important;
+  display: block !important;
+}
+
+.scrollbarCustom::-webkit-scrollbar-track {
+  background: rgba(251, 196, 171, 0.15) !important;
+  border-radius: 99px !important;
+}
+
+.scrollbarCustom::-webkit-scrollbar-thumb {
+  background-color: #FBC4AB !important;
+  border-radius: 99px !important;
+  border: 1px solid rgba(251, 196, 171, 0.2) !important;
+}
+

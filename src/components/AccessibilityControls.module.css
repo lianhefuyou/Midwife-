@@ -1,0 +1,103 @@
+.controlPanel {
+  background: var(--color-bg-pure);
+  border: 1px solid rgba(251, 196, 171, 0.35);
+  border-radius: 1rem;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(251, 196, 171, 0.08);
+}
+
+.introCompact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-gray);
+  font-size: 0.9rem;
+}
+
+.iconCircle {
+  background: var(--color-primary-light);
+  color: #c96d42;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controlsGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.controlLabel {
+  font-weight: 600;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+.btnGroup {
+  display: flex;
+  background: var(--color-bg-soft);
+  padding: 0.25rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(251, 196, 171, 0.2);
+}
+
+.sizeBtn {
+  background: transparent;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--color-gray);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.sizeBtn:hover {
+  color: var(--color-dark);
+}
+
+.activeSizeBtn {
+  background: var(--color-accent);
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(179, 138, 87, 0.3);
+}
+
+/* Custom indicator for accessibility feedback */
+.pulseIndicator {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+}

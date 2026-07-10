@@ -1,0 +1,49 @@
+.heroContainer {
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+  width: 100%;
+  display: block;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Beautiful custom inset shadow overlay for rich aesthetic paper-depth */
+.innerShadowOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 35px rgba(74, 62, 61, 0.12);
+  border-radius: inherit;
+  z-index: 10;
+}
+
+.heroContent {
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bannerFrame {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  aspect-ratio: 3/1;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Slight scale zoom & 0.4 degree life-like tilt perspective rotation on Hover */
+.heroContainer:hover .bannerFrame {
+  transform: scale(1.02) rotate(0.4deg);
+}
+
+.placeholderFrame {
+  width: 100%;
+  aspect-ratio: 3/1;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.heroContainer:hover .placeholderFrame {
+  transform: scale(1.01) rotate(0.1deg);
+}
