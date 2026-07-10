@@ -240,7 +240,7 @@ const getCategorySubtitle = (category: string) => {
   switch (category) {
     case 'qa':
     case 'quiz':
-      return '同理心挑戰';
+      return '';
     case 'faq':
       return '常見問答與互動';
     case 'recommend':
@@ -252,9 +252,7 @@ const getCategorySubtitle = (category: string) => {
 };
 
 const getDisplayTitle = (item: typeof SEARCH_INDEX[0]) => {
-  const subtitle = getCategorySubtitle(item.category);
-  const cleanTitle = item.title.replace(/^(常見問答：|推薦資源：|微學習影片：|圖書\/衛教小卡：)/, '');
-  return subtitle ? `${subtitle}：${cleanTitle}` : item.title;
+  return item.title.replace(/^(常見問答：|推薦資源：|微學習影片：|圖書\/衛教小卡：)/, '');
 };
 
 const highlightText = (text: string, query: string) => {
