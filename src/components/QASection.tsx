@@ -5,6 +5,7 @@ import styles from './QASection.module.css';
 import { QAQuestion, QAOption } from '../types';
 import html2canvas from 'html2canvas';
 import { motion, AnimatePresence } from 'motion/react';
+import { getAssetUrl } from '../utils/asset';
 
 const SAMPLE_QUESTIONS: QAQuestion[] = [
   {
@@ -667,14 +668,14 @@ export default function QASection({ activeQuestionIndex }: QASectionProps = {}) 
           {/* Infographic Image Card with hover styles and click-to-zoom action */}
           <div className="relative group max-w-2xl mx-auto rounded-2xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-lg transition-all duration-300 mb-6 bg-orange-50/20">
             <img
-              src="/images/qa.jpg"
+              src={getAssetUrl('images/qa.jpg')}
               alt="孕助醫＋ 學習懶人包"
               referrerPolicy="no-referrer"
               className="w-full h-auto cursor-zoom-in group-hover:scale-[1.01] transition-transform duration-300"
               onClick={() => setShowZoomModal(true)}
               onError={(e) => {
                 // If qa.jpg is not found yet, gracefully fall back to infographic.png
-                (e.target as HTMLImageElement).src = '/images/infographic.png';
+                (e.target as HTMLImageElement).src = getAssetUrl('images/infographic.png');
               }}
             />
           </div>
@@ -682,7 +683,7 @@ export default function QASection({ activeQuestionIndex }: QASectionProps = {}) 
           {/* Action Button Row */}
           <div className="flex flex-wrap gap-3 justify-center items-center max-w-lg mx-auto mb-4">
             <a
-              href="/images/qa.jpg"
+              href={getAssetUrl('images/qa.jpg')}
               download="qa.jpg"
               className="py-2.5 px-4 bg-[#b38a57] hover:bg-[#9c7344] text-white font-extrabold rounded-xl text-xs sm:text-sm hover:scale-[1.03] active:scale-95 duration-150 transition-all cursor-pointer flex items-center gap-1.5 shadow-sm"
               onClick={(e) => {
@@ -691,7 +692,7 @@ export default function QASection({ activeQuestionIndex }: QASectionProps = {}) 
                 if (img && (img as HTMLImageElement).src.includes('infographic.png')) {
                   e.preventDefault();
                   const link = document.createElement('a');
-                  link.href = '/images/infographic.png';
+                  link.href = getAssetUrl('images/infographic.png');
                   link.download = 'infographic.png';
                   document.body.appendChild(link);
                   link.click();
@@ -1015,12 +1016,12 @@ export default function QASection({ activeQuestionIndex }: QASectionProps = {}) 
                 {/* Framed full-size image viewport matching pre-survey embedded box layout */}
                 <div className="w-full flex-1 rounded-xl overflow-auto border border-orange-100 bg-[#FFFDFB] relative shadow-inner my-2 flex items-center justify-center">
                   <img
-                    src="/images/qa.jpg"
+                    src={getAssetUrl('images/qa.jpg')}
                     alt="孕助醫＋ 學習懶人包"
                     referrerPolicy="no-referrer"
                     className="max-w-full max-h-[75vh] object-contain rounded-lg"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = '/images/infographic.png';
+                      (e.target as HTMLImageElement).src = getAssetUrl('images/infographic.png');
                     }}
                   />
                 </div>

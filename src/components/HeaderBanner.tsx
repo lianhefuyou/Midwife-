@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Image as ImageIcon } from 'lucide-react';
+import { getAssetUrl } from '../utils/asset';
 import styles from './HeaderBanner.module.css';
 
 export default function HeaderBanner() {
-  const [bannerSrc, setBannerSrc] = useState('images/banner.jpg');
+  const [bannerSrc, setBannerSrc] = useState(() => getAssetUrl('images/banner.png'));
   const [imageError, setImageError] = useState(false);
 
   const handleImageError = () => {
-    if (bannerSrc === 'images/banner.jpg') {
-      setBannerSrc('images/banner.png');
-    } else if (bannerSrc === 'images/banner.png') {
-      setBannerSrc('images/banner.jpeg');
+    if (bannerSrc.includes('banner.png')) {
+      setBannerSrc(getAssetUrl('images/banner.jpg'));
+    } else if (bannerSrc.includes('banner.jpg')) {
+      setBannerSrc(getAssetUrl('images/banner.jpeg'));
     } else {
       setImageError(true);
     }

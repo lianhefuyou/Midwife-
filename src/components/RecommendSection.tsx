@@ -295,7 +295,7 @@ export default function RecommendSection() {
             </div>
             <div>
               <h3 className="font-extrabold text-base md:text-lg text-gray-800 leading-snug">
-                伴侶陪伴孕產圖（神隊友必看）
+                伴侶陪伴孕產圖
               </h3>
               <div className="flex flex-wrap gap-1.5 mt-1.5">
                 <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full border bg-amber-50 text-[#b38a57] border-amber-100">

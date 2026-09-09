@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getAssetUrl } from '../utils/asset';
 
 interface FallbackImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   basePath: string; // The base path without the extension, e.g. "images/tch"
@@ -16,19 +17,19 @@ export default function FallbackImage({
   ...props
 }: FallbackImageProps) {
   const [extIndex, setExtIndex] = useState(0);
-  const [imgSrc, setImgSrc] = useState(() => `${basePath}.${extensions[0]}`);
+  const [imgSrc, setImgSrc] = useState(() => getAssetUrl(`${basePath}.${extensions[0]}`));
 
   // When basePath or extensions array changes, reset starting with the first extension
   useEffect(() => {
     setExtIndex(0);
-    setImgSrc(`${basePath}.${extensions[0]}`);
+    setImgSrc(getAssetUrl(`${basePath}.${extensions[0]}`));
   }, [basePath, extensions]);
 
   const handleError = () => {
     if (extIndex + 1 < extensions.length) {
       const nextIndex = extIndex + 1;
       setExtIndex(nextIndex);
-      setImgSrc(`${basePath}.${extensions[nextIndex]}`);
+      setImgSrc(getAssetUrl(`${basePath}.${extensions[nextIndex]}`));
     }
   };
 

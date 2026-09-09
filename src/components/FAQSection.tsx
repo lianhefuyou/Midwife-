@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { PhoneCall, Check, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { getAssetUrl } from '../utils/asset';
 
 interface FAQSectionProps {
   onNavigateToVideo?: () => void;
@@ -267,7 +268,7 @@ export default function FAQSection({ onNavigateToVideo, expandedFaqId }: FAQSect
                             <div className="flex justify-center">
                               <div className="relative w-40 h-40 rounded-xl overflow-hidden border border-emerald-100 bg-white shadow-sm flex items-center justify-center shrink-0">
                                 <img
-                                  src="/images/light_g.jpg"
+                                  src={getAssetUrl('images/light_g.jpg')}
                                   alt="綠燈：在家放鬆"
                                   referrerPolicy="no-referrer"
                                   className="w-full h-full object-cover"
@@ -300,7 +301,7 @@ export default function FAQSection({ onNavigateToVideo, expandedFaqId }: FAQSect
                             <div className="flex justify-center">
                               <div className="relative w-40 h-40 rounded-xl overflow-hidden border border-amber-200 bg-white shadow-sm flex items-center justify-center shrink-0">
                                 <img
-                                  src="/images/light_y.jpg"
+                                  src={getAssetUrl('images/light_y.jpg')}
                                   alt="黃燈：打給產房"
                                   referrerPolicy="no-referrer"
                                   className="w-full h-full object-cover"
@@ -333,7 +334,7 @@ export default function FAQSection({ onNavigateToVideo, expandedFaqId }: FAQSect
                             <div className="flex justify-center">
                               <div className="relative w-40 h-40 rounded-xl overflow-hidden border border-rose-200 bg-white shadow-sm flex items-center justify-center shrink-0">
                                 <img
-                                  src="/images/light_r.jpg"
+                                  src={getAssetUrl('images/light_r.jpg')}
                                   alt="紅燈：立刻出發"
                                   referrerPolicy="no-referrer"
                                   className="w-full h-full object-cover"
@@ -444,14 +445,14 @@ export default function FAQSection({ onNavigateToVideo, expandedFaqId }: FAQSect
                             
                             <div className="mt-3 flex flex-col items-center bg-white/80 p-3 rounded-xl border border-amber-100/60 shadow-sm">
                               <img 
-                                src="/images/secretions.png" 
+                                src={getAssetUrl('images/secretions.png')} 
                                 alt="分泌物與破水辨識圖" 
                                 className="w-full max-w-xs sm:max-w-md rounded-lg object-contain cursor-zoom-in hover:opacity-90 transition-all"
                                 onClick={() => setIsImageZoomed(true)}
                                 referrerPolicy="no-referrer"
                               />
                               <a
-                                href="/images/secretions.png"
+                                href={getAssetUrl('images/secretions.png')}
                                 download="secretions.png"
                                 className="mt-3 w-full sm:w-auto px-5 py-2 bg-[#b38a57] hover:bg-[#9a7547] text-white font-extrabold rounded-xl shadow-sm hover:shadow-md active:scale-95 transition-all text-xs flex items-center justify-center gap-1.5 cursor-pointer select-none"
                               >
@@ -466,14 +467,14 @@ export default function FAQSection({ onNavigateToVideo, expandedFaqId }: FAQSect
                             
                             <div className="mt-3 flex flex-col items-center bg-white/80 p-3 rounded-xl border border-emerald-100/60 shadow-sm">
                               <img 
-                                src="/images/secretions.png" 
+                                src={getAssetUrl('images/secretions.png')} 
                                 alt="分泌物與破水辨識圖" 
                                 className="w-full max-w-xs sm:max-w-md rounded-lg object-contain cursor-zoom-in hover:opacity-90 transition-all"
                                 onClick={() => setIsImageZoomed(true)}
                                 referrerPolicy="no-referrer"
                               />
                               <a
-                                href="/images/secretions.png"
+                                href={getAssetUrl('images/secretions.png')}
                                 download="secretions.png"
                                 className="mt-3 w-full sm:w-auto px-5 py-2 bg-[#b38a57] hover:bg-[#9a7547] text-white font-extrabold rounded-xl shadow-sm hover:shadow-md active:scale-95 transition-all text-xs flex items-center justify-center gap-1.5 cursor-pointer select-none"
                               >
@@ -609,7 +610,7 @@ export default function FAQSection({ onNavigateToVideo, expandedFaqId }: FAQSect
                 {/* Embedded Image Area */}
                 <div className="w-full flex-1 rounded-xl overflow-auto bg-[#FFFDFB] border border-orange-100 p-2 flex items-center justify-center shadow-inner my-2">
                   <img
-                    src="/images/secretions.png"
+                    src={getAssetUrl('images/secretions.png')}
                     alt="分泌物與破水辨識圖 (放大)"
                     className="max-w-full max-h-[60vh] rounded-lg object-contain"
                     referrerPolicy="no-referrer"
@@ -624,7 +625,7 @@ export default function FAQSection({ onNavigateToVideo, expandedFaqId }: FAQSect
                   
                   <div className="flex gap-2 w-full sm:w-auto justify-end">
                     <a
-                      href="/images/secretions.png"
+                      href={getAssetUrl('images/secretions.png')}
                       download="secretions.png"
                       className="w-full sm:w-auto py-2 px-6 bg-[#b38a57] hover:bg-[#9a7547] text-white font-extrabold text-xs rounded-xl shadow-md active:scale-95 transition-all flex items-center justify-center gap-1.5 cursor-pointer select-none"
                     >

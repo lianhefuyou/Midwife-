@@ -11,6 +11,7 @@ import {
   CheckCircle2, 
   Compass
 } from 'lucide-react';
+import { getAssetUrl } from '../utils/asset';
 
 interface Stage {
   title: string;
@@ -330,7 +331,7 @@ export default function CompanionshipSection() {
                       <div className="mt-auto w-full flex justify-center items-center">
                         <div className="relative w-full aspect-[16/9] max-h-[110px] sm:max-h-[135px] md:max-h-[155px] rounded-2xl overflow-hidden border border-orange-100/40 shadow-sm bg-orange-50/20 flex items-center justify-center shrink-0">
                           <img
-                            src={stage.image}
+                            src={getAssetUrl(stage.image)}
                             alt={stage.title}
                             referrerPolicy="no-referrer"
                             className="w-full h-full object-cover"
